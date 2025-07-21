@@ -1,0 +1,298 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgb(224, 224, 212);
+}
+
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(224, 224, 212); /* Arkaplan rengi */
+  z-index: 9999; /* Üstte görünmesi için */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader {
+  width: 48px;
+  height: 48px;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.loader:before {
+  content: "";
+  width: 48px;
+  height: 5px;
+  background: #5a4141;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  border-radius: 50%;
+  animation: shadow324 0.5s linear infinite;
+}
+
+.loader:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #ba8d80;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 4px;
+  animation: jump7456 0.5s linear infinite;
+}
+
+@keyframes jump7456 {
+  15% {
+    border-bottom-right-radius: 3px;
+  }
+
+  25% {
+    transform: translateY(9px) rotate(22.5deg);
+  }
+
+  50% {
+    transform: translateY(18px) scale(1, 0.9) rotate(45deg);
+    border-bottom-right-radius: 40px;
+  }
+
+  75% {
+    transform: translateY(9px) rotate(67.5deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(90deg);
+  }
+}
+
+@keyframes shadow324 {
+  0%,
+  100% {
+    transform: scale(1, 1);
+  }
+
+  50% {
+    transform: scale(1.2, 1);
+  }
+}
+
+.header {
+  position: fixed;
+  display: flex;
+}
+.header .menu ul {
+  display: flex;
+  margin: 0 15px;
+  padding: 30px;
+  list-style: none;
+  position: absolute;
+  right: 50px;
+  font-family: "Cormorant Infant", serif;
+  font-size: 22px;
+  color: rgb(87, 59, 51);
+}
+.header .menu ul li {
+  margin: 0 45px;
+}
+.header .menu ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+.header .logo {
+  position: absolute;
+  top: -50px;
+  left: 20px;
+}
+.header .logo img {
+  width: 200px;
+  height: 200px;
+}
+.about {
+  position: fixed;
+  top: 30%;
+  left: 10%;
+  height: 200px;
+  width: 650px;
+  box-sizing: border-box;
+
+  border-radius: 0 30px 0 30px;
+  text-align: center;
+  background-clip: padding-box;
+}
+
+.about .me img {
+  width: 160px;
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: 0 10px 10px rgba(129, 76, 76, 0.24);
+}
+.about .bio {
+  font-family: "Cormorant SC", serif;
+  color: rgb(22, 7, 3);
+  font-size: 20px;
+  position: relative;
+  top: 20px;
+}
+.media {
+  position: relative;
+  top: 3%;
+  left: 1%;
+  font-family: "Cormorant SC", serif;
+  color: rgb(87, 59, 51);
+  justify-content: center;
+  text-align: center;
+}
+.media .card {
+  display: flex;
+  background: none;
+  border: none;
+}
+.media .card a {
+  text-decoration: none;
+}
+
+/* for all social containers*/
+.socialContainer {
+  width: 40px;
+  height: 50px;
+  background-color: rgb(44, 44, 44);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: 1.2s;
+  border-radius: 15px 0 15px 0px;
+}
+.socialContainer i {
+  background: none;
+  color: rgb(224, 224, 212);
+}
+/* instagram*/
+.containerOne:hover {
+  background-color: #d62976;
+  transition-duration: 1s;
+}
+/* twitter*/
+.containerTwo:hover {
+  background-color: #636363;
+  transition-duration: 1s;
+}
+/* linkdin*/
+.containerThree:hover {
+  background-color: #0072b1;
+  transition-duration: 1s;
+}
+/* Whatsapp*/
+.containerFour:hover {
+  background-color: #ad2929;
+  transition-duration: 1s;
+}
+
+.socialContainer:active {
+  transform: scale(0.9);
+  transition-duration: 1s;
+}
+
+.socialSvg {
+  width: 17px;
+}
+
+.socialSvg path {
+  fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+  animation: slide-in-top 1.2s both;
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header .logo img {
+    width: 100px;
+  }
+
+  .about {
+    width: 90%;
+  }
+
+  .about .bio {
+    font-size: 18px;
+  }
+}
+@media (max-width: 480px) {
+  .menu ul li a {
+    font-size: 18px;
+  }
+
+  .about .bio {
+    font-size: 16px;
+  }
+  .media {
+    top: 80%;
+    width: 400px;
+  }
+  .media h2 {
+    font-size: 20px;
+  }
+}
+.right-side {
+  position: absolute;
+  top: 25%;
+  right: 0%;
+  font-size: 25px;
+  font-family: "Cormorant SC", serif;
+  color: #9c766b;
+  padding: 100px 200px;
+  border: 1px solid #9c766b;
+  border-radius: 20% 20% 0 20%;
+  box-shadow: 0 10px 10px rgba(129, 76, 76, 0.24);
+}
+.right-side .more {
+  position: relative;
+  top: 40px;
+  left: 30px;
+  padding: 20px 60px;
+  font-family: "Cormorant Infant", serif;
+  color: rgb(87, 59, 51);
+  font-size: 22px;
+  border-radius: 0.5em;
+  background: rgb(224, 224, 212);
+  cursor: pointer;
+  border: 1px solid rgb(224, 224, 212);
+  transition: all 0.3s;
+  box-shadow: 6px 6px 12px rgb(202, 202, 191), -6px -6px 12px rgb(231, 231, 219);
+}
+.right-side .more:active {
+  color: #666;
+  box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+}
